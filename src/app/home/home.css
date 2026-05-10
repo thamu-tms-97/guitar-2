@@ -1,0 +1,19 @@
+#devin-landes {
+  width: 400px;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0 8px 10px rgba(50, 92, 176, 0.808);
+}
+
+#defin-landes:active {
+  transform: scale(0.95);
+}
+
+#devin-landes-message {
+  line-height: 1.6;
+  margin: 20px;
+  padding: 10px;
+  font-size: 1.4em;
+  text-align: center;
+}

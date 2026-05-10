@@ -1,0 +1,48 @@
+<nav class="navbar navbar-light navbar-custom navbar-expand-lg">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="images/icon/guitar-light-brown.png" id="guitar-icon" alt="Guitar icon" />
+      Home
+    </a>
+
+    <!-- Toggler button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Left-aligned links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/guitar']" routerLinkActive="active-link">
+            Guitars
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right-aligned items and links -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/shopping-cart']" routerLinkActive="active-link">
+            <div id="cart-border">
+              <!-- Number of items currently in the cart -->
+              @if (cartService.length() > 0) {
+              <span class="me-0" id="cart-quantity"> {{ cartService.totalItems() }} </span>
+              } @else {
+              <span class="me-0" id="cart-quantity"> {{ 0 }} </span>
+              }
+              <i class="bi bi-cart-fill fs-4" id="cart-icon"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

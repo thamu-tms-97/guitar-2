@@ -1,0 +1,65 @@
+/*
+ * Navbar
+ */
+.navbar-custom {
+  background-color: var(--custom-primary-dark) !important;
+}
+
+.navbar .navbar-brand {
+  color: var(--custom-secondary-light) !important;
+}
+
+/* Active link color */
+.navbar .nav-link.active-link {
+  font-weight: bold;
+  color: white !important;
+}
+
+/* Default (inactive) link color */
+.navbar .nav-link {
+  color: var(--custom-secondary-light) !important;
+}
+
+/* Change color to white on hover */
+.navbar .nav-link:hover {
+  color: white !important;
+}
+
+/* Active link color */
+.navbar .navbar-brand-link {
+  font-weight: bold;
+  color: white !important;
+}
+.navbar .navbar-brand:hover {
+  color: white !important;
+}
+
+#guitar-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-right: 6px;
+  color: var(--custom-secondary-light) !important;
+}
+
+/* Cart */
+
+#cart-icon {
+  padding-right: 6px;
+}
+
+#cart-border {
+  /* shrink to fit content */
+  display: inline-block;
+
+  border-radius: 10%;
+  border: 2px solid;
+  border-color: var(--custom-secondary);
+}
+
+#cart-quantity {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  padding: 2px 6px 2px 6px;
+}

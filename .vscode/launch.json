@@ -1,0 +1,65 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "chrome debug html - current file",
+      "url": "${file}",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "name": "Launch chrome localhost:4200",
+      "request": "launch",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "name": "node - current file",
+      "program": "${file}",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      /* speed-up debugging */
+      "outFiles": [],
+      "resolveSourceMapLocations": null,
+      /* output pino logger messages */
+      "outputCapture": "std",
+      "console": "integratedTerminal"
+    },
+    {
+      // run jest tests
+      "name": "jest - run unit tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["test"],
+      "console": "integratedTerminal"
+    },
+    {
+      // run jest coverage report
+      "name": "jest - run test coverage report",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "args": ["run", "coverage"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "chrome debug localhost",
+      "url": "http://localhost:8000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "name": "chrome debug jest tests",
+      "request": "launch",
+      "runtimeArgs": ["--inspect-brk", "${workspaceRoot}/node_modules/jest/bin/jest.js", "--runInBand"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}

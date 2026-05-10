@@ -1,0 +1,94 @@
+/*
+ * This file contains custom Bootstrap theme variables and styles to override the standard.
+ * Since bootstrap is loaded after this, we use important to ensure our styles take precedence.
+ */
+
+/* Declare some css variables for custom colors */
+:root {
+  --custom-primary: #3981ec;
+  --custom-primary-light: #a3cdf7;
+  --custom-primary-light2: #d1e4f6;
+  --custom-primary-dark: #0059ff;
+  --custom-secondary: #f17532;
+  --custom-secondary-dark: #742300;
+  --custom-secondary-light: #ffd5a6;
+  --custom-body-bg: #f0f0f0;
+  --custom-card-bg: #f4c7f1;
+}
+
+/*
+ * Card
+ */
+.card-custom,
+.card-custom .card-body {
+  background-color: var(--custom-card-bg) !important;
+  border-color: var(--custom-secondary) !important;
+  border-width: 2px !important;
+}
+
+/*
+ * Buttons
+ */
+.btn-primary {
+  background-color: var(--custom-secondary-light) !important;
+  border-color: var(--custom-secondary-dark) !important;
+  color: var(--custom-secondary-dark) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--custom-secondary) !important;
+  border-color: var(--custom-secondary) !important;
+  border-radius: 15px !important;
+  color: white !important;
+}
+
+.btn-checkout {
+  background-color: rgb(33, 174, 33) !important;
+  border-color: var(--custom-secondary) !important;
+  border-radius: 15px !important;
+  color: white !important;
+}
+
+.btn-checkout:hover {
+  background-color: lightgreen !important;
+  border-color: var(--custom-secondary-dark) !important;
+  color: var(--custom-secondary-dark) !important;
+}
+
+.btn-checkout,
+.btn-checkout:hover {
+  width: 180px;
+  margin: 10px;
+}
+
+.btn-place-order {
+  background-color: rgb(33, 174, 33) !important;
+  border-color: var(--custom-secondary) !important;
+  border-radius: 15px !important;
+  color: white !important;
+}
+
+.btn-place-order:hover {
+  background-color: lightgreen !important;
+  border-color: var(--custom-secondary-dark) !important;
+  color: black !important;
+}
+
+.btn-place-order,
+.btn-place-order:hover {
+  width: 240px;
+  margin: 20px;
+}
+
+/*
+ * table grid and layout
+ */
+.custom-cell {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--custom-secondary-light);
+  background-color: var(--custom-primary-light2);
+  margin: 20px;
+  padding: 10px;
+  min-width: 130px;
+}

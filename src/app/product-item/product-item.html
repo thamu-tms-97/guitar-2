@@ -1,0 +1,59 @@
+@if (prod === undefined) {
+<div class="container">
+  <div class="alert alert-danger" role="alert">Error: Unable to display a product</div>
+</div>
+} @else {
+<div class="col-2 custom-cell d-flex flex-column">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <img [src]="pathToImage" id="product-image" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col justify-content-center">
+      <div class="fw-bold text-center">
+        <div class="fw-bold">{{ prod.value.name | titlecase }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="roww">
+    <div class="col d-flex justify-content-center">
+      <div class="row fw-bold">{{ prod.value.price | currency : 'USD' }}</div>
+    </div>
+  </div>
+  <div class="mt-auto">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="row">{{ prod.value.currentQuantity }}/{{ prod.value.initialQuantity }} in stock</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="dropdown">
+          <button
+            class="btn btn-dropdown dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ selected }}
+          </button>
+          <ul class="dropdown-menu">
+            @for (i of numbers; track i) {
+            <li>
+              <a class="dropdown-item" (click)="onQuantitySelect(i)" [class.active]="i === selected"> {{ i }} </a>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <button class="btn btn-add-to-cart" (click)="onAddToCart()">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+}

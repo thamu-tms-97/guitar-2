@@ -1,0 +1,24 @@
+/*
+ * color tests
+ */
+.test-red {
+  background-color: rgb(234, 45, 45) !important;
+}
+.test-green {
+  background-color: rgb(89, 243, 89) !important;
+}
+.test-blue {
+  background-color: rgb(79, 79, 247) !important;
+}
+.test-yellow {
+  background-color: yellow !important;
+}
+.test-purple {
+  background-color: rgb(215, 31, 215) !important;
+}
+.test-orange {
+  background-color: rgb(221, 146, 8) !important;
+}
+.test-pink {
+  background-color: rgb(243, 141, 158) !important;
+}

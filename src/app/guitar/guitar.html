@@ -1,0 +1,27 @@
+<!--
+  The following code is an HTML template for a guitar component in an Angular application.
+  It displays a list of guitar products and includes buttons to proceed to the shopping cart.
+  Additionally, it conditionally shows an error message if one exists.
+-->
+
+<!--
+  STUDENTS MUST WRITE HTML FOR THIS COMPONENT
+-->
+
+<div>
+  <h1>Guitars</h1>
+  <button class="btn btn-primary btn-checkout" [routerLink]="['/shopping-cart']">Proceed to checkout</button>
+  <!-- if show is true, show message from child component -->
+  @if (message!.show) {
+  <div class="alert alert-danger alert-dismissible mt-2" role="alert">
+    {{ message!.text }}
+    <button type="button" class="btn-close" (click)="clearErrorMessage()"></button>
+  </div>
+  }
+  <div>
+    @for (p of products | keyvalue; track p.key) {
+    <app-product-item [prod]="p"></app-product-item>
+    }
+  </div>
+  <button class="btn btn-primary btn-checkout" [routerLink]="['/shopping-cart']">Proceed to checkout</button>
+</div>

@@ -1,0 +1,5 @@
+#footer {
+  background-color: var(--custom-primary-dark);
+  color: var(--custom-secondary-light);
+  margin-top: 40px;
+}

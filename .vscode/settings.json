@@ -1,0 +1,125 @@
+{
+  // --------------------- General settings ---------------------
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#f3adf8d0",
+    "titleBar.activeForeground": "#000000"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.rulers": [120],
+  "editor.trimAutoWhitespace": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  // File handling
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true
+  },
+  "debug.inlineValues": "on",
+  // black settings
+  "black-formatter.args": ["--line-length", "120", "--skip-string-normalization"],
+  "black-formatter.importStrategy": "fromEnvironment",
+  // --------------------- Language specific settings ---------------------
+  // Python settings
+  "[python]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  // isort settings
+  "isort.args": ["--profile", "black"],
+  "isort.importStrategy": "fromEnvironment",
+  // pylint settings
+  "pylint.importStrategy": "fromEnvironment",
+  "python.defaultInterpreterPath": "${workspaceFolder}/tools/perf/env_py310/bin/python",
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["service_tests"],
+  "python.analysis.extraPaths": [".", "./tools/ir_lib", "${workspaceFolder}", "${workspaceFolder}/tools/perf"],
+  "pylint.args": [
+    "--max-line-length=120",
+    "--disable=missing-function-docstring,missing-module-docstring,consider-using-f-string"
+  ],
+  // Go settings
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.insertSpaces": true,
+    "editor.hover.enabled": "on",
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "on",
+      "strings": "on"
+    },
+    "editor.suggest.showFunctions": true
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast", "--timeout", "5m"],
+  "go.lintOnSave": "package",
+  "gopls": {
+    "analyses": {
+      "unusedparams": true,
+      "shadow": true,
+      "nilness": true,
+      "fieldalignment": true,
+      "useany": true
+    },
+    "staticcheck": true,
+    "completeUnimported": true,
+    "hoverKind": "FullDocumentation"
+  },
+  // json settings
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // yaml settings
+  "[yaml]": {
+    "editor.tabSize": 2
+  },
+  // jsonc settings
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // bat file settings
+  "[bat]": {
+    "files.eol": "\r\n"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.validate": ["javascript"],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+  // --------------------- Temporarily disable formatting ---------------------
+  // START OF TEMPORARILY DISABLE FORMATTING, then REALOD WINDOW TO CHANGE
+  // "editor.formatOnSave": false,
+  // "editor.formatOnType": false,
+  // "editor.formatOnPaste": false,
+  // "files.trimTrailingWhitespace": false,
+  // "editor.codeActionsOnSave": {
+  //   "source.organizeImports": "never"
+  // },
+  // END OF TEMPORARILY DISABLE FORMATTING
+}

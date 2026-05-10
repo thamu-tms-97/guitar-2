@@ -1,0 +1,78 @@
+/* Buttons */
+.btn-add-to-cart {
+  background-color: var(--custom-secondary-light) !important;
+  border-color: var(--custom-secondary-dark) !important;
+  color: var(--custom-secondary-dark) !important;
+}
+
+.btn-add-to-cart:hover {
+  background-color: var(--custom-secondary) !important;
+  border-color: var(--custom-secondary) !important;
+  color: white !important;
+}
+
+.btn-add-to-cart,
+.btn-add-to-cart:hover {
+  border-radius: 15px !important;
+  max-height: 35px;
+  min-width: 120px;
+  margin: 5px;
+}
+
+/* Product Image */
+#product-image {
+  max-width: 100px;
+  max-height: 220px;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Force Product Item Container to display nicely in flexbox */
+:host {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  /* Allow wrapping while preferring 10-per-row at maximumm */
+  /* flex: grow shrink preferredWidth */
+  flex: 0 0 10%;
+}
+
+/* Buttons */
+.btn-dropdown {
+  background-color: var(--custom-primary-light2) !important;
+  border-color: var(--custom-secondary-dark) !important;
+  color: var(--custom-secondary-dark) !important;
+}
+
+.btn-dropdown:hover {
+  background-color: var(--custom-primary-light) !important;
+  border-color: var(--custom-secondary) !important;
+  border-radius: 15px !important;
+  color: white !important;
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu {
+  min-width: 10px;
+  border-radius: 10px;
+  background-color: var(--custom-primary-light2);
+  border-color: var(--custom-secondary-dark);
+}
+
+.dropdown-item {
+  padding: 10px 16px;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--custom-primary-light);
+  font-weight: bold;
+}
+
+/* Active (selected/clicked) */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--custom-primary-light2);
+  color: black;
+}
