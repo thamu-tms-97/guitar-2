@@ -6,7 +6,7 @@
       Home
     </a>
 
-    <!-- Toggler button -->
+    <!-- Mobile toggle -->
     <button
       class="navbar-toggler"
       type="button"
@@ -16,28 +16,44 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Collapsible content -->
+    <!-- Navbar content -->
     <div class="collapse navbar-collapse" id="navbarContent">
-      <!-- Left-aligned links -->
+      <!-- Left side -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/guitar']" routerLinkActive="active-link">
             Guitars
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/strings']" routerLinkActive="active-link">
+            Strings
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/pick']" routerLinkActive="active-link"> Picks </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/strap']" routerLinkActive="active-link"> Straps </a>
+        </li>
       </ul>
 
-      <!-- Right-aligned items and links -->
+      <!-- Right side -->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/shopping-cart']" routerLinkActive="active-link">
             <div id="cart-border">
-              <!-- Number of items currently in the cart -->
               @if (cartService.length() > 0) {
-              <span class="me-0" id="cart-quantity"> {{ cartService.totalItems() }} </span>
+                <span class="me-0" id="cart-quantity">
+                  {{ cartService.totalItems() }}
+                </span>
               } @else {
-              <span class="me-0" id="cart-quantity"> {{ 0 }} </span>
+                <span class="me-0" id="cart-quantity"> 0 </span>
               }
+
               <i class="bi bi-cart-fill fs-4" id="cart-icon"></i>
             </div>
           </a>
