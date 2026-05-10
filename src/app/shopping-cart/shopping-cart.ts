@@ -18,7 +18,7 @@ export class ShoppingCart {
     private productsService: ProductsService,
     private cartService: CartService,
     private router: Router,
-    private logger: NGXLogger
+    private logger: NGXLogger,
   ) {}
 
   products: Map<number, Product> = new Map<number, Product>();
@@ -30,7 +30,6 @@ export class ShoppingCart {
 
     if (allProducts && this.cart) {
       for (const [id, product] of allProducts) {
-        // Check if cart contains a CartItem with this product id
         if (this.cart.some((item) => item.productId === id)) {
           this.products.set(id, product);
         }
@@ -41,49 +40,52 @@ export class ShoppingCart {
   }
 
   quantity(productId: number): number {
-    /*
-     * STUDENTS MUST WRITE CODE FOR THIS FUNCTION
-     */
-    let res = 222;
-    return res;
+    return this.cartService.quantity(productId);
   }
 
   productSubtotal(productId: number): number {
-    /*
-     * STUDENTS MUST WRITE CODE FOR THIS FUNCTION
-     */
-    let res = 333;
-    return res;
+    const product = this.productsService.products.get(productId);
+
+    if (!product) {
+      return 0;
+    }
+
+    return product.price * this.quantity(productId);
   }
 
   subtotal(): number {
-    /*
-     * STUDENTS MUST WRITE CODE FOR THIS FUNCTION
-     */
-    let total = 123.45;
+    let total = 0;
+
+    for (const item of this.cartService.cart) {
+      total += this.productSubtotal(item.productId);
+    }
+
     return total;
   }
 
   tax(): number {
-    /*
-     * STUDENTS MUST WRITE CODE FOR THIS FUNCTION
-     */
-    return 543.21;
+    return this.subtotal() * 0.0925;
   }
 
   total(): number {
-    /*
-     * STUDENTS MUST WRITE CODE FOR THIS FUNCTION
-     */
-    let res = 999.99;
-    return res;
+    return this.subtotal() + this.tax();
   }
 
-  processOrder() {}
+  processOrder() {
+    for (const item of this.cartService.cart) {
+      const product = this.productsService.products.get(item.productId);
+
+      if (product) {
+        product.currentQuantity -= item.quantity;
+      }
+    }
+
+    this.cartService.cart.length = 0;
+    this.products.clear();
+  }
 
   orderPlaced() {
-    /*
-     * STUDENTS MUST WRITE CODE FOR THIS FUNCTION
-     */
+    this.processOrder();
+    this.router.navigate(['/order-placed']);
   }
 }
